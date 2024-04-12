@@ -1,7 +1,8 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars ,faCartShopping } from '@fortawesome/free-solid-svg-icons';
+import { faBars ,faCartShopping,faUser } from '@fortawesome/free-solid-svg-icons';
 import "../styles/navigation.css"
+
 
 const Navigation = () => {
 
@@ -18,7 +19,9 @@ const Navigation = () => {
   }
 
   return (
+    
     <div className="container">
+    
     <h1 className="logo" id="logo"><a href="">Shop.me</a></h1>
     <div className="main_nav_container" id="main_nav_container">
     <span className='close_btn' onClick={close}>X</span>
@@ -26,16 +29,20 @@ const Navigation = () => {
         <ul className="ul_list">
             <li><a href=''>Home</a></li>
             <li><a href=''>Products</a></li>
-            <li><a href=''>Cart</a></li>
+            <li><a href=''>Cart <span className='cart_item_number'>0</span></a></li>
             <li><a href=''>Logout</a></li>
             <li><a href=''>About Us</a></li>
+
         </ul>
      </nav>
      </div>
      <span className="open-nva-icon">
+           <FontAwesomeIcon icon={faUser}className='user_profile' />
            <FontAwesomeIcon icon={faCartShopping} className='shopping_cart' />
            <FontAwesomeIcon icon={faBars} className="bar_icon" id="bar_icon" onClick={open} style={{fontSize:"35px"}} /> 
     </span>
+  
+   
     </div>
   )
 }
